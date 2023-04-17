@@ -1,0 +1,60 @@
+<html>  
+      <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+        <title>Upload SVG</title>
+      </head>
+      <body>
+        <header class="bg-dark text-white py-3">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12 col-md-6">
+                      <h1>SVG Image Injection Testbed</h1>
+                  </div>
+                  <div class="col-12 col-md-6">
+                      <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                          </button>
+                          <div class="collapse navbar-collapse" id="navbarNav">
+                              <ul class="navbar-nav">
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#">Home</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#">About</a>
+                                  </li>
+                                  
+                              </ul>
+                          </div>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </header>
+
+    <div class="container my-5">
+      <div class="row">
+            <div class="col-12 col-md-6"> 
+                <form action="/upload" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                      <label for="svgimage" class="form-label"><h3>Select Image to upload:</h3></label>
+                      <input class="form-control" type="file" id="svgimage" name="svg" required>                    
+                    </div>
+                    <div class="form-group">
+                        <label for="version" class="form-label"><h3>DOMPurify Version:</h3></label>      
+                        <select class='form-control' id='version' name='version' >
+                          <option value="none">None</option>
+                          <option value="latest">Latest</option>
+                          <option value="2.0.0">2.0.0</option>          
+                          <option value="2.1.0">2.1.0</option>
+                          <option value="2.2.0">2.2.0</option>
+                        </select> 
+                      </div>            
+                    <input class="btn btn-primary" type="submit" value="Submit Image" name="svg_submit">
+                </form>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
